@@ -38,8 +38,8 @@ class Case2Activity : AppCompatActivity() {
         }
 
         val title = binding.productTitle.text
-        val favText = getString(R.string.cd_ajouter_aux_favoris) // ex. "Bouton favoris"
-        val panierText = getString(R.string.ajouter_recette) // ex. "Bouton ajouter au panier"
+        val favText = getString(R.string.cd_ajouter_aux_favoris)
+        val panierText = getString(R.string.ajouter_recette)
 
         val fullDescription = "Recette : $title. $favText. $panierText."
         binding.recipeCard.contentDescription = fullDescription

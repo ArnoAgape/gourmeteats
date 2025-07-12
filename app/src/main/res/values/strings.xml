@@ -19,9 +19,12 @@
     <string name="recette_suppression_favoris">Recette supprimée des favoris</string>
     <string name="cas_3">Cas 3 :</string>
     <string name="pseudo">Pseudonyme :</string>
-    <string name="ecrire_pseudo">écris ton pseudo ici</string>
     <string name="recipe">Recette :</string>
     <string name="validate">Valider</string>
+    <string name="validate_nickname">Pseudonyme enregistré</string>
+    <string name="nickname_checked">Écrire un pseudonyme d\'au moins trois caractères</string>
+    <string name="text_too_short">Trop court</string>
+    <string name="text_correct">Texte valide</string>
     <string name="demo_product_name">Nom du produit</string>
 
 </resources>
