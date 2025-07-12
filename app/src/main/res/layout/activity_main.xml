@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:orientation="vertical"
+    android:gravity="center">
+
+    <Button
+        android:id="@+id/goToCase1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/cas_1_bouton_d_ajout_au_panier"
+        android:layout_marginVertical="16dp"
+        android:layout_marginHorizontal="8dp"
+        />
+
+    <Button
+        android:id="@+id/goToCase2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/cas_2_carte_de_suggestion_de_recettes"
+        android:layout_marginVertical="16dp"
+        android:layout_marginHorizontal="8dp"
+        />
+
+    <Button
+        android:id="@+id/goToCase3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/cas_3_formulaire_de_connexion"
+        android:layout_marginVertical="16dp"
+        android:layout_marginHorizontal="8dp"
+
+        />
+
+</LinearLayout>

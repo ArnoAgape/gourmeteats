@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">Gourmet Eats</string>
+    <string name="cas_3_formulaire_de_connexion">Formulaire de connexion</string>
+    <string name="cas_2_carte_de_suggestion_de_recettes">Carte de suggestion de recettes</string>
+    <string name="cas_1_bouton_d_ajout_au_panier">Bouton d\'ajout au panier</string>
+    <string name="cas_1_ajouter_un_produit">ajouter un produit</string>
+    <string name="cas_1_supprimer_un_produit">supprimer un produit</string>
+    <string name="cas_1">Cas 1 :</string>
+    <string name="impossible_d_avoir_une_quantit_n_gative">Impossible d\'avoir une quantité négative</string>
+    <string name="cas_2">Cas 2 :</string>
+    <string name="cd_ajouter_aux_favoris">Favoris</string>
+    <string name="ajouter">Ajouter</string>
+    <string name="ajouter_recette">Ajouter la recette au panier</string>
+    <string name="demo_cookie_text">Cookies au chocolat</string>
+    <string name="recette_cookies_chocolat">Recette de cookies au chocolat</string>
+    <string name="image_recette">Recette</string>
+    <string name="recette_ajout_au_panier">Recette ajoutée au panier</string>
+    <string name="recette_ajout_favoris">Recette ajoutée aux favoris</string>
+    <string name="recette_suppression_favoris">Recette supprimée des favoris</string>
+    <string name="cas_3">Cas 3 :</string>
+    <string name="pseudo">Pseudonyme :</string>
+    <string name="ecrire_pseudo">écris ton pseudo ici</string>
+    <string name="recipe">Recette :</string>
+    <string name="validate">Valider</string>
+    <string name="demo_product_name">Nom du produit</string>
+
+</resources>
