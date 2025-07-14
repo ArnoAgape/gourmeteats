@@ -42,7 +42,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:text="@string/validate"
-        android:accessibilityLiveRegion="polite"
+        android:accessibilityLiveRegion="assertive"
         android:importantForAccessibility="yes"
         />
 

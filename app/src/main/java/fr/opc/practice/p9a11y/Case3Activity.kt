@@ -37,17 +37,25 @@ class Case3Activity : AppCompatActivity() {
             } else {
                 ColorStateList.valueOf(resources.getColor(R.color.red400, theme))
             }
-
             when (textLength) {
                 1, 2 -> {
-                    binding.pseudoEdit.error = getString(R.string.text_too_short)
+                    binding.pseudoEdit.postDelayed({
+                        binding.pseudoEdit.error = getString(R.string.text_too_short)
+                    }, 1200)
+
                 }
 
                 3 -> {
+                    binding.pseudoEdit.error = null
+                    binding.pseudoEdit.postDelayed({
+                        binding.pseudoEdit.announceForAccessibility(getString(R.string.text_correct))
+                    }, 100)
+                }
+
+                else -> {
                     binding.pseudoEdit.error = null
                 }
             }
         }
     }
-
 }
