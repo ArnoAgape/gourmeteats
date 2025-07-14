@@ -5,14 +5,12 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat.addAccessibilityAction
-import androidx.core.view.ViewCompat.setStateDescription
 import fr.opc.practice.p9a11y.databinding.ActivityCase2Binding
 import kotlin.jvm.java
 
 class Case2Activity : AppCompatActivity() {
     private lateinit var binding: ActivityCase2Binding
     private var isFavourite = false
-    private var hasUserInteracted = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -53,18 +51,6 @@ class Case2Activity : AppCompatActivity() {
         } else {
             binding.favouriteButton.setImageResource(R.drawable.ic_favourite_off)
         }
-        // 🔊 Annonce pour TalkBack
-        if (hasUserInteracted) {
-            val announcement = if (isFavourite) {
-                getString(R.string.recette_ajout_favoris)
-            } else {
-                getString(R.string.recette_suppression_favoris)
-            }
-            setStateDescription(binding.favouriteButton, announcement)
-        } else {
-            setStateDescription(binding.favouriteButton, null)
-            hasUserInteracted = true
-        }
     }
 
     private fun setAccessibility() {
@@ -85,17 +71,26 @@ class Case2Activity : AppCompatActivity() {
         ) { _, _ ->
             isFavourite = !isFavourite
             setFavouriteButtonIcon(isFavourite)
+
+            // 🔊 Forcer une énonciation immédiate après l'action
+            val message = if (isFavourite) {
+                getString(R.string.recette_ajout_favoris)
+            } else {
+                getString(R.string.recette_suppression_favoris)
+            }
+
+            binding.recipeCard.announceForAccessibility(message)
+
             true
         }
 
         // Action : Ajouter au panier
         addAccessibilityAction(
             binding.recipeCard,
-            getString(R.string.recette_ajout_au_panier)
+            getString(R.string.ajouter_recette)
         ) { _, _ ->
             Toast.makeText(this, getString(R.string.recette_ajout_au_panier), Toast.LENGTH_SHORT).show()
             true
         }
     }
-
 }

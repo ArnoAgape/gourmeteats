@@ -30,7 +30,7 @@
         android:id="@+id/pseudoEdit"
         android:layout_width="match_parent"
         android:layout_height="48dp"
-        android:autofillHints="pseudonyme"
+        android:autofillHints="username"
         app:errorEnabled="true"
         android:inputType="text"
         android:importantForAccessibility="yes"

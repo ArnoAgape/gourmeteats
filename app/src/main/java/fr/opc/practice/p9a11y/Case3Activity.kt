@@ -21,7 +21,7 @@ class Case3Activity : AppCompatActivity() {
         binding.validateButton.setOnClickListener {
             Toast.makeText(
                 this,
-                getString(R.string.recette_ajout_au_panier),
+                getString(R.string.validate_nickname),
                 Toast.LENGTH_SHORT
             )
                 .show()

@@ -27,7 +27,8 @@
             android:layout_height="wrap_content"
             android:text="@string/demo_product_name"
             android:textSize="28sp"
-            android:layout_weight="1"/>
+            android:layout_weight="1"
+            android:textColor="@color/black"/>
 
         <ImageButton
             android:id="@+id/removeButton"
