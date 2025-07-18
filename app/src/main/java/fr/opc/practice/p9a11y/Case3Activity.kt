@@ -2,6 +2,8 @@ package fr.opc.practice.p9a11y
 
 import android.content.res.ColorStateList
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.widget.doOnTextChanged
@@ -9,6 +11,10 @@ import fr.opc.practice.p9a11y.databinding.ActivityCase3Binding
 
 class Case3Activity : AppCompatActivity() {
     private lateinit var binding: ActivityCase3Binding
+    private val handler = Handler(Looper.getMainLooper())
+    private val debounceRunnable = Runnable {
+        validatePseudo(binding.pseudoEdit.text.toString().trim())
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -37,25 +43,23 @@ class Case3Activity : AppCompatActivity() {
             } else {
                 ColorStateList.valueOf(resources.getColor(R.color.red400, theme))
             }
-            when (textLength) {
-                1, 2 -> {
-                    binding.pseudoEdit.postDelayed({
-                        binding.pseudoEdit.error = getString(R.string.text_too_short)
-                    }, 1200)
+            // Annule le Runnable précédent (si l'utilisateur tape vite)
+            handler.removeCallbacksAndMessages(debounceRunnable)
 
-                }
+            // Relance un nouveau Runnable avec délai
+            handler.postDelayed(debounceRunnable, 1200)
+        }
+    }
+    private fun validatePseudo(text: String) {
+        when (text.length) {
+            1, 2 -> binding.pseudoEdit.error = getString(R.string.text_too_short)
 
-                3 -> {
-                    binding.pseudoEdit.error = null
-                    binding.pseudoEdit.postDelayed({
-                        binding.pseudoEdit.announceForAccessibility(getString(R.string.text_correct))
-                    }, 100)
-                }
-
-                else -> {
-                    binding.pseudoEdit.error = null
-                }
+            3 -> {
+                binding.pseudoEdit.error = null
+                binding.pseudoEdit.announceForAccessibility(getString(R.string.text_correct))
             }
+
+            else -> binding.pseudoEdit.error = null
         }
     }
 }
