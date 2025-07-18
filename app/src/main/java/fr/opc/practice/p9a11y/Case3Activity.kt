@@ -38,19 +38,21 @@ class Case3Activity : AppCompatActivity() {
 
             binding.validateButton.isEnabled = textLength > 2
 
-            binding.pseudoEdit.backgroundTintList = if (textLength > 2) {
-                ColorStateList.valueOf(resources.getColor(R.color.green400, theme))
-            } else {
-                ColorStateList.valueOf(resources.getColor(R.color.red400, theme))
-            }
             // Annule le Runnable précédent (si l'utilisateur tape vite)
             handler.removeCallbacksAndMessages(debounceRunnable)
 
             // Relance un nouveau Runnable avec délai
-            handler.postDelayed(debounceRunnable, 1200)
+            handler.postDelayed(debounceRunnable, 1000)
         }
     }
     private fun validatePseudo(text: String) {
+
+        binding.pseudoEdit.backgroundTintList = if (text.length > 2) {
+            ColorStateList.valueOf(resources.getColor(R.color.green400, theme))
+        } else {
+            ColorStateList.valueOf(resources.getColor(R.color.red400, theme))
+        }
+
         when (text.length) {
             1, 2 -> binding.pseudoEdit.error = getString(R.string.text_too_short)
 

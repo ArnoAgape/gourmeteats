@@ -33,7 +33,6 @@
         android:autofillHints="username"
         app:errorEnabled="true"
         android:inputType="text"
-        android:importantForAccessibility="yes"
         />
 
     <Button
